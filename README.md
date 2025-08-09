@@ -4,7 +4,7 @@ The library for local work with AI tools without running MCP server.
 ### Installation
 
 ```python 
-pip install mcp-lite
+uv add mcp-lite
 ```
 
 ### Import
@@ -15,7 +15,12 @@ from mcp_lite import MCP
 
 ### Usage
 
-```python 
+```python
+from typing import List
+
+from mcp_lite import MCP, Tool
+
+
 mcp = MCP()
 
 
@@ -29,7 +34,12 @@ async def async_mul(a, b):
     return a * b
 
 
-tools = mcp.list_tools()
+tools: List[Tool] = mcp.list_tools()
+
+tools_description = "\n".join(
+    f"- {tool.name}: {tool.description}" 
+    for tool in tools
+)
 
 # Some code where AI calls some tools :)
 
