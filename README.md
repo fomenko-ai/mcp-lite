@@ -26,11 +26,25 @@ mcp = MCP()
 
 @mcp.tool
 def sync_add(a, b):
+    """
+    Call this function if you need to add two numbers.
+
+    Args:
+        a (int | float): The first number.
+        b (int | float): The second number.
+    """
     return a + b
 
 
 @mcp.tool
 async def async_mul(a, b):
+    """
+    Call this function if you need to multiply two numbers.
+
+    Args:
+        a (int | float): The first number.
+        b (int | float): The second number.
+    """
     return a * b
 
 
